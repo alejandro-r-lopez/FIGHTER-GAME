@@ -25,19 +25,15 @@
     <body>
         <main>
             <section class="header">
-                <div id="counter-section" class="counter-section">
-                    ENEMIES DEFEATED:<span id="defeat-count">0</span>
-                </div>
-                <input class="input" id="input" placeholder="name" />
-                <button>submit</button>
+                <div class="counter-section">ENEMIES DEFEATED:<span id="defeat-count">0</span></div>
+                <input class="mob-input" id="mob-input" placeholder="name" />
+                <button class="mob-button" id="mob-button">submit</button>
             </section>
 
-            <section class="hero-section" id="hero-section">
-                <div><img src="assets/hero-one.png" class="hero-img" id="hero-img'/></div>
-            </section>
-
-            <section class="mob-section" id="mob-section">
-                <ul class="mobs" id="mobs" ul></ul>
+            <section class="fight-section">
+                <h1>HP:<span id="hero-hp">10</span></h1>
+                <div><img src="assets/hero-one.png" class="hero-img" id="hero-img" /></div>
+                <ul class="mobs" id="mob-spawn"></ul>
             </section>
         </main>
     </body>

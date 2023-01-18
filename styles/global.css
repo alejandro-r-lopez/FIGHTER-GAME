@@ -44,10 +44,20 @@ main {
     left: 40px;
 }
 
-.hero-section {
+.fight-section {
     margin-top: 400px;
+    display: flex;
 }
 
 .hero-img {
     width: 300px;
+}
+
+.mobs {
+    display: flex;
+}
+
+.mob-style {
+    background-image: url('../assets/mob-three.png');
+    color: aqua;
 }
