@@ -1,15 +1,14 @@
 :root {
-    --background: rgb(224, 234, 247);
-    --header-background: rgb(254, 251, 245);
     --primary-font: Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
         'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
 }
 
 body {
     font-family: var(--primary-font);
-    background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr;
+    background: url('../assets/game-bg.png');
+    background-size: cover;
 }
 
 header {
@@ -32,4 +31,23 @@ header .logo {
 
 main {
     padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    padding: 20px;
+}
+
+.counter-section {
+    position: absolute;
+    left: 40px;
+}
+
+.hero-section {
+    margin-top: 400px;
+}
+
+.hero-img {
+    width: 300px;
 }
