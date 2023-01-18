@@ -34,8 +34,19 @@ const mobs = [
 displayMobs();
 
 function displayMobs() {
+    mobSpawn.textContent = '';
     for (let mob of mobs) {
         const newMob = renderMobs(mob);
         mobSpawn.append(newMob);
+
+        newMob.addEventListener('click', () => {
+            if (Math.random() > 0.5) {
+                alert(`You hit ${mob.name}!`);
+                mob.hp--;
+            } else {
+                alert(`You missed ${mob.name}`);
+            }
+            displayMobs();
+        });
     }
 }
