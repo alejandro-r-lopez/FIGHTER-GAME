@@ -45,19 +45,22 @@ main {
 }
 
 .fight-section {
-    margin-top: 400px;
+    margin-top: 200px;
     display: flex;
+    align-items: center;
 }
 
 .hero-img {
     width: 300px;
+    margin-top: 100px;
 }
 
 .mobs {
     display: flex;
+    width: 100px;
 }
 
 .mob-style {
-    background-image: url('../assets/mob-three.png');
-    color: aqua;
+    text-align: center;
+    width: 200px;
 }
