@@ -22,7 +22,7 @@ const defeatCount = document.getElementById('defeat-count');
 const newGameButton = document.getElementById('new-game-button');
 
 let defeated = 0;
-let HP = 1;
+let HP = 10;
 let defaultMob = 'ENEMY';
 
 const mobs = [
