@@ -7,7 +7,7 @@ body {
     font-family: var(--primary-font);
     display: grid;
     grid-template-rows: auto 1fr;
-    background: url('../assets/game-bg.png');
+    background: url('../assets/space-bg.png');
     background-size: cover;
 }
 
@@ -37,6 +37,7 @@ main {
     display: flex;
     justify-content: right;
     padding: 20px;
+    color: aliceblue;
 }
 
 .counter-section {
@@ -45,22 +46,30 @@ main {
 }
 
 .fight-section {
-    margin-top: 200px;
+    margin-top: 100px;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
 }
 
 .hero-img {
-    width: 300px;
+    width: 100px;
     margin-top: 100px;
 }
 
 .mobs {
-    display: flex;
-    width: 100px;
+    width: 80px;
+}
+
+.mob-item {
+    text-align: center;
+    color: aliceblue;
 }
 
 .mob-style {
-    text-align: center;
-    width: 200px;
+    width: 100px;
+    margin-right: 40px;
+}
+
+.hero-hp {
+    color: aliceblue;
 }

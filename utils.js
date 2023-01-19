@@ -6,9 +6,11 @@ export function renderMobs(mobs) {
 
     mobName.textContent = mobs.name;
     mobHP.textContent = mobs.hp;
-    mobImg.src = './assets/mob-three.png';
+    mobImg.src = './assets/mob-one.png';
 
-    newMob.classList.add('mob-style');
+    mobImg.classList.add('mob-style');
+
+    newMob.classList.add('mob-item');
 
     newMob.append(mobName, mobHP, mobImg);
     return newMob;
