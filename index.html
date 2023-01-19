@@ -14,6 +14,12 @@
         <script type="module" src="app.js"></script>
 
         <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet"
+        />
         <!-- see https://fonts.google.com/ -->
 
         <!-- css -->
@@ -23,19 +29,23 @@
     </head>
 
     <body>
-        <main>
+        <main id="game-screen">
             <section class="header">
                 <div class="counter-section">ENEMIES DEFEATED:<span id="defeat-count">0</span></div>
                 <input class="mob-input" id="mob-input" placeholder="name" />
                 <button class="mob-button" id="mob-button">ADD ENEMY</button>
             </section>
 
-            <h1 class="hero-hp">HP:<span id="hero-hp">10</span></h1>
+            <h1 class="hero-hp">HP:<span id="hero-hp"></span></h1>
 
             <section class="fight-section">
                 <div><img src="assets/x-wing.png" class="hero-img" id="hero-img" /></div>
                 <ul class="mobs" id="mob-spawn"></ul>
             </section>
+        </main>
+        <main class="game-over hide" id="game-over">
+            <div>GAME OVER</div>
+            <button class="new-game-button" id="new-game-button">try again</button>
         </main>
     </body>
 </html>

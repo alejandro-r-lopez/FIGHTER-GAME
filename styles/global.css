@@ -78,3 +78,31 @@ main {
 .hero-hp {
     color: aliceblue;
 }
+
+.game-over {
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 300px;
+    font-size: 36px;
+    color: red;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.hide {
+    display: none;
+}
+
+.new-game-button {
+    margin-top: 20px;
+    width: 200px;
+    background: transparent;
+    color: white;
+    outline: none;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+}

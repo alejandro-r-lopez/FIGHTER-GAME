@@ -9,7 +9,7 @@
 /* Display Functions */
 
 // (don't forget to call any display functions you want to run on page load!)
-import { renderMobs } from '/utils.js';
+import { renderMobs, toggleGameOver } from '/utils.js';
 const heroImg = document.getElementById('hero-img');
 const heroHP = document.getElementById('hero-hp');
 
@@ -18,6 +18,8 @@ const mobButton = document.getElementById('mob-button');
 const mobSpawn = document.getElementById('mob-spawn');
 
 const defeatCount = document.getElementById('defeat-count');
+
+const newGameButton = document.getElementById('new-game-button');
 
 let defeated = 0;
 let HP = 10;
@@ -39,6 +41,8 @@ const mobs = [
 ];
 
 displayMobs();
+heroHP.textContent = HP;
+defeatCount.textContent = defeated;
 
 function displayMobs() {
     mobSpawn.textContent = '';
@@ -62,6 +66,11 @@ function displayMobs() {
             if (mob.hp === 0) {
                 defeated++;
             }
+            if (HP === 0) {
+                toggleGameOver();
+                HP = 10;
+                defeated = 0;
+            }
 
             heroHP.textContent = HP;
             defeatCount.textContent = defeated;
@@ -84,4 +93,8 @@ mobButton.addEventListener('click', () => {
     mobInput.nodeValue = '';
 
     displayMobs();
+});
+
+newGameButton.addEventListener('click', () => {
+    toggleGameOver();
 });

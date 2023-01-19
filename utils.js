@@ -15,3 +15,10 @@ export function renderMobs(mobs) {
     newMob.append(mobName, mobHP, mobImg);
     return newMob;
 }
+
+export function toggleGameOver() {
+    const gameOverScreen = document.getElementById('game-over');
+    const gameScreen = document.getElementById('game-screen');
+    gameOverScreen.classList.toggle('hide');
+    gameScreen.classList.toggle('hide');
+}
