@@ -9,11 +9,12 @@ export function renderMobs(mobs) {
 
     if (mobs.hp > 0) {
         mobImg.src = './assets/mob-one.png';
-    } else {
+    } else if (mobs.hp === 0) {
         mobImg.src = './assets/explosion.png';
         mobName.textContent = '';
         mobHP.textContent = '';
         setTimeout(hideDefeated, 900);
+        mobHP.hp = '';
     }
 
     function hideDefeated() {

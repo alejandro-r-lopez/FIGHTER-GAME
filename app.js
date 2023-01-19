@@ -22,8 +22,8 @@ const defeatCount = document.getElementById('defeat-count');
 const newGameButton = document.getElementById('new-game-button');
 
 let defeated = 0;
-let HP = 1;
-let defaultMob = 'ENEMY FIGHTER';
+let HP = 10;
+let defaultMob = 'ENEMY';
 
 const mobs = [
     {
@@ -32,7 +32,7 @@ const mobs = [
     },
     {
         name: 'DOOKU',
-        hp: 3,
+        hp: 1,
     },
     {
         name: 'MAUL',
@@ -54,6 +54,7 @@ function displayMobs() {
             if (Math.random() > 0.5) {
                 alert(`You hit ${mob.name}!`);
                 mob.hp--;
+                newMob.classList.add('flash');
             } else {
                 alert(`You missed ${mob.name}`);
             }
@@ -70,8 +71,6 @@ function displayMobs() {
                 toggleGameOver();
                 HP = 10;
                 defeated = 0;
-            }
-            if (mob.hp === 0) {
             }
 
             heroHP.textContent = HP;
@@ -99,9 +98,5 @@ mobButton.addEventListener('click', () => {
 
 newGameButton.addEventListener('click', () => {
     toggleGameOver();
+    displayMobs();
 });
-
-function destroyMob() {
-    renderMobs();
-    mobImg.src = './assets/explosion.png';
-}
