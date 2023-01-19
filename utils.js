@@ -9,15 +9,20 @@ export function renderMobs(mobs) {
 
     if (mobs.hp > 0) {
         mobImg.src = './assets/mob-one.png';
-    } else if (mobs.hp === 0) {
+    }
+    if (mobs.hp === -1) {
+        hideDefeated();
+    }
+    if (mobs.hp === 0) {
         mobImg.src = './assets/explosion.png';
         mobName.textContent = '';
         mobHP.textContent = '';
         setTimeout(hideDefeated, 900);
+        mobs.hp = -1;
     }
 
     function hideDefeated() {
-        mobImg.src = '';
+        newMob.classList.add('hide');
     }
 
     mobImg.classList.add('mob-style');
