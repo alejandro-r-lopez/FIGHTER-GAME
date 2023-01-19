@@ -22,7 +22,7 @@ const defeatCount = document.getElementById('defeat-count');
 const newGameButton = document.getElementById('new-game-button');
 
 let defeated = 0;
-let HP = 10;
+let HP = 1;
 let defaultMob = 'ENEMY';
 
 const mobs = [
@@ -43,6 +43,8 @@ const mobs = [
 displayMobs();
 heroHP.textContent = HP;
 defeatCount.textContent = defeated;
+
+heroImg.src = './assets/x-wing.png';
 
 function displayMobs() {
     mobSpawn.textContent = '';
@@ -72,7 +74,9 @@ function displayMobs() {
                 HP = 10;
                 defeated = 0;
             }
-
+            if (HP === 0) {
+                heroImg.src = './assets/explosion.png';
+            }
             heroHP.textContent = HP;
             defeatCount.textContent = defeated;
 

@@ -52,6 +52,7 @@ main {
     flex-wrap: wrap;
     margin-left: 60px;
     margin-right: 60px;
+    padding-top: 20px;
 }
 
 .hero-img {
@@ -80,6 +81,8 @@ main {
     color: aliceblue;
     font-family: 'Press Start 2P', cursive;
     padding-top: 100px;
+    padding-bottom: 20px;
+    font-size: 18px;
 }
 
 .game-over {
@@ -112,4 +115,14 @@ main {
 
 .flash {
     color: red;
+}
+
+.mob-input {
+    border-radius: 2px;
+    background: transparent;
+}
+
+.mob-button {
+    font-size: 10px;
+    margin-left: 10px;
 }
