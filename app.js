@@ -21,6 +21,7 @@ const defeatCount = document.getElementById('defeat-count');
 
 let defeated = 0;
 let HP = 10;
+let defaultMob = 'ENEMY FIGHTER';
 
 const mobs = [
     {
@@ -74,7 +75,7 @@ mobButton.addEventListener('click', () => {
     const mobName = mobInput.value;
 
     const addNewMob = {
-        name: mobName,
+        name: mobName || defaultMob,
         hp: Math.ceil(Math.random() * 7),
     };
 
