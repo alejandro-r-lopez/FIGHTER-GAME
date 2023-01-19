@@ -46,9 +46,11 @@ main {
 }
 
 .fight-section {
-    margin-top: 100px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .hero-img {
@@ -63,6 +65,9 @@ main {
 .mob-item {
     text-align: center;
     color: aliceblue;
+    line-height: 4px;
+    font-size: 10px;
+    padding-bottom: 30px;
 }
 
 .mob-style {

@@ -13,22 +13,26 @@ import { renderMobs } from '/utils.js';
 const heroImg = document.getElementById('hero-img');
 const heroHP = document.getElementById('hero-hp');
 
-const mobInput = document.getElementById('input');
+const mobInput = document.getElementById('mob-input');
 const mobButton = document.getElementById('mob-button');
 const mobSpawn = document.getElementById('mob-spawn');
 
+const defeatCount = document.getElementById('defeat-count');
+
+let defeated = 0;
 let HP = 10;
+
 const mobs = [
     {
-        name: 'greg',
-        hp: 5,
+        name: 'VADER',
+        hp: 9,
     },
     {
-        name: 'mark',
-        hp: 5,
+        name: 'DOOKU',
+        hp: 3,
     },
     {
-        name: 'tim',
+        name: 'MAUL',
         hp: 5,
     },
 ];
@@ -54,9 +58,29 @@ function displayMobs() {
             } else {
                 alert(`${mob.name} missed!`);
             }
+            if (mob.hp === 0) {
+                defeated++;
+            }
+
             heroHP.textContent = HP;
+            defeatCount.textContent = defeated;
 
             displayMobs();
         });
     }
 }
+
+mobButton.addEventListener('click', () => {
+    const mobName = mobInput.value;
+
+    const addNewMob = {
+        name: mobName,
+        hp: Math.ceil(Math.random() * 7),
+    };
+
+    mobs.push(addNewMob);
+
+    mobInput.nodeValue = '';
+
+    displayMobs();
+});
