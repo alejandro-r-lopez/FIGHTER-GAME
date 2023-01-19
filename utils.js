@@ -6,10 +6,21 @@ export function renderMobs(mobs) {
 
     mobName.textContent = mobs.name;
     mobHP.textContent = mobs.hp;
-    mobImg.src = './assets/mob-one.png';
+
+    if (mobs.hp > 0) {
+        mobImg.src = './assets/mob-one.png';
+    } else {
+        mobImg.src = './assets/explosion.png';
+        mobName.textContent = '';
+        mobHP.textContent = '';
+        setTimeout(hideDefeated, 900);
+    }
+
+    function hideDefeated() {
+        mobImg.src = '';
+    }
 
     mobImg.classList.add('mob-style');
-
     newMob.classList.add('mob-item');
 
     newMob.append(mobName, mobHP, mobImg);

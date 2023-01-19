@@ -22,7 +22,7 @@ const defeatCount = document.getElementById('defeat-count');
 const newGameButton = document.getElementById('new-game-button');
 
 let defeated = 0;
-let HP = 10;
+let HP = 1;
 let defaultMob = 'ENEMY FIGHTER';
 
 const mobs = [
@@ -71,6 +71,8 @@ function displayMobs() {
                 HP = 10;
                 defeated = 0;
             }
+            if (mob.hp === 0) {
+            }
 
             heroHP.textContent = HP;
             defeatCount.textContent = defeated;
@@ -98,3 +100,8 @@ mobButton.addEventListener('click', () => {
 newGameButton.addEventListener('click', () => {
     toggleGameOver();
 });
+
+function destroyMob() {
+    renderMobs();
+    mobImg.src = './assets/explosion.png';
+}
