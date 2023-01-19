@@ -14,7 +14,6 @@ export function renderMobs(mobs) {
         mobName.textContent = '';
         mobHP.textContent = '';
         setTimeout(hideDefeated, 900);
-        mobHP.hp = '';
     }
 
     function hideDefeated() {
