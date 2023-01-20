@@ -14,10 +14,12 @@ export function renderMobs(mobs) {
         hideDefeated();
     }
     if (mobs.hp === 0) {
-        mobImg.src = './assets/explosion.png';
+        // mobImg.classList.add('mob-hit-image');
         mobName.textContent = '';
         mobHP.textContent = '';
-        setTimeout(hideDefeated, 900);
+        mobImg.classList.add('shake');
+        mobImg.classList.add('explode');
+        setTimeout(hideDefeated, 600);
         mobs.hp = -1;
     }
 

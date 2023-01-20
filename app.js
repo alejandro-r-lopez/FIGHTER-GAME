@@ -22,7 +22,7 @@ const defeatCount = document.getElementById('defeat-count');
 const newGameButton = document.getElementById('new-game-button');
 
 let defeated = 0;
-let HP = 10;
+let HP = 2;
 let defaultMob = 'ENEMY';
 
 const mobs = [
@@ -48,7 +48,7 @@ heroImg.src = './assets/x-wing.png';
 
 function revertHitMark() {
     heroImg.src = 'assets/x-wing.png';
-    heroImg.classList.remove('apply-shake');
+    heroImg.classList.remove('shake');
 }
 
 function displayMobs() {
@@ -59,6 +59,7 @@ function displayMobs() {
 
         newMob.addEventListener('click', () => {
             if (Math.random() > 0.5) {
+                heroImg.classList.add('attack');
                 alert(`You hit ${mob.name}!`);
                 mob.hp--;
             } else {
@@ -67,7 +68,7 @@ function displayMobs() {
             if (Math.random() > 0.5) {
                 alert(`${mob.name} hit you!`);
                 HP--;
-                heroImg.classList.add('apply-shake');
+                heroImg.classList.add('shake');
                 heroImg.src = './assets/x-wing-hit.png';
                 setTimeout(revertHitMark, 600);
             } else {

@@ -152,7 +152,19 @@ main {
     }
 }
 
-.apply-shake {
+@keyframes attack {
+    0% {
+        transform: translate3d(0px, 0, 0);
+    }
+    100% {
+        transform: translate3d(400px, 0, 0);
+    }
+}
+.attack {
+    animation: attack 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+}
+
+.shake {
     animation: shake 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) both;
 }
 
@@ -166,6 +178,15 @@ main {
 }
 .mob-hit-image {
     background-image: URL('../assets/mob-one-hit.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+
+    width: 100px;
+    height: 100px;
+}
+
+.explode {
+    background-image: URL('../assets/explosion.png');
     background-size: 100px;
     background-repeat: no-repeat;
 
