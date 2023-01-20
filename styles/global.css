@@ -154,14 +154,14 @@ main {
 
 @keyframes attack {
     0% {
-        transform: translate3d(0px, 0, 0);
+        transform: translate3d(-200px, 0, 0);
     }
     100% {
-        transform: translate3d(400px, 0, 0);
+        transform: translate3d(40px, 0, 0);
     }
 }
 .attack {
-    animation: attack 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+    animation: attack 1s cubic-bezier(0.075, 0.82, 0.165, 1) both;
 }
 
 .shake {

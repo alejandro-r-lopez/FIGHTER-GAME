@@ -45,6 +45,7 @@ heroHP.textContent = HP;
 defeatCount.textContent = defeated;
 
 heroImg.src = './assets/x-wing.png';
+heroImg.classList.add('attack');
 
 function revertHitMark() {
     heroImg.src = 'assets/x-wing.png';
@@ -59,16 +60,16 @@ function displayMobs() {
 
         newMob.addEventListener('click', () => {
             if (Math.random() > 0.5) {
-                heroImg.classList.add('attack');
                 alert(`You hit ${mob.name}!`);
                 mob.hp--;
             } else {
                 alert(`You missed ${mob.name}`);
             }
             if (Math.random() > 0.5) {
+                heroImg.classList.add('shake');
                 alert(`${mob.name} hit you!`);
                 HP--;
-                heroImg.classList.add('shake');
+
                 heroImg.src = './assets/x-wing-hit.png';
                 setTimeout(revertHitMark, 600);
             } else {
@@ -84,6 +85,10 @@ function displayMobs() {
                 defeated = 0;
             }
 
+            function retreat() {
+                heroImg.classList.remove('attack');
+            }
+            setTimeout(retreat, 900);
             heroHP.textContent = HP;
             defeatCount.textContent = defeated;
 
