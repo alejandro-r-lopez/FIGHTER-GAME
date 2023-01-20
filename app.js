@@ -46,6 +46,11 @@ defeatCount.textContent = defeated;
 
 heroImg.src = './assets/x-wing.png';
 
+function revertHitMark() {
+    heroImg.src = 'assets/x-wing.png';
+    heroImg.classList.remove('apply-shake');
+}
+
 function displayMobs() {
     mobSpawn.textContent = '';
     for (let mob of mobs) {
@@ -56,13 +61,15 @@ function displayMobs() {
             if (Math.random() > 0.5) {
                 alert(`You hit ${mob.name}!`);
                 mob.hp--;
-                newMob.classList.add('flash');
             } else {
                 alert(`You missed ${mob.name}`);
             }
             if (Math.random() > 0.5) {
                 alert(`${mob.name} hit you!`);
                 HP--;
+                heroImg.classList.add('apply-shake');
+                heroImg.src = './assets/x-wing-hit.png';
+                setTimeout(revertHitMark, 600);
             } else {
                 alert(`${mob.name} missed!`);
             }
@@ -70,13 +77,12 @@ function displayMobs() {
                 defeated++;
             }
             if (HP === 0) {
-                toggleGameOver();
+                heroImg.src = 'assets/explosion.png';
+                setTimeout(toggleGameOver, 600);
                 HP = 10;
                 defeated = 0;
             }
-            if (HP === 0) {
-                heroImg.src = './assets/explosion.png';
-            }
+
             heroHP.textContent = HP;
             defeatCount.textContent = defeated;
 

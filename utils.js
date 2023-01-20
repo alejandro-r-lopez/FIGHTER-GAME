@@ -2,13 +2,13 @@ export function renderMobs(mobs) {
     const newMob = document.createElement('li');
     const mobName = document.createElement('p');
     const mobHP = document.createElement('p');
-    const mobImg = document.createElement('img');
+    const mobImg = document.createElement('p');
 
     mobName.textContent = mobs.name;
     mobHP.textContent = mobs.hp;
 
     if (mobs.hp > 0) {
-        mobImg.src = './assets/mob-one.png';
+        mobImg.classList.add('mob-image');
     }
     if (mobs.hp === -1) {
         hideDefeated();
@@ -20,6 +20,10 @@ export function renderMobs(mobs) {
         setTimeout(hideDefeated, 900);
         mobs.hp = -1;
     }
+
+    // if (mobs.hp === mobs.hp--) {
+    //     mobImg.src = './assets/mob-one-hit.png';
+    // }
 
     function hideDefeated() {
         newMob.classList.add('hide');

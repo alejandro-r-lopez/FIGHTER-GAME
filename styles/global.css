@@ -113,16 +113,62 @@ main {
     font-size: 18px;
 }
 
-.flash {
-    color: red;
-}
-
 .mob-input {
     border-radius: 2px;
     background: transparent;
+    outline: none;
+    color: aliceblue;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .mob-button {
     font-size: 10px;
     margin-left: 10px;
+    background-color: black;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+.apply-shake {
+    animation: shake 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+}
+
+.mob-image {
+    background-image: URL('../assets/mob-one.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+
+    width: 100px;
+    height: 100px;
+}
+.mob-hit-image {
+    background-image: URL('../assets/mob-one-hit.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+
+    width: 100px;
+    height: 100px;
 }
