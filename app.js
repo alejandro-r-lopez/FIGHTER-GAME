@@ -40,6 +40,21 @@ const mobs = [
     },
 ];
 
+setInterval(makeMove, 3000);
+setInterval(makeSecondMove, 6000);
+
+heroImg.classList.add('first-move');
+
+function makeMove() {
+    heroImg.classList.remove('first-move');
+    heroImg.classList.add('second-move');
+}
+
+function makeSecondMove() {
+    heroImg.classList.add('first-move');
+    heroImg.classList.remove('second-move');
+}
+
 displayMobs();
 heroHP.textContent = HP;
 defeatCount.textContent = defeated;

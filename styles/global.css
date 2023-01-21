@@ -160,12 +160,36 @@ main {
         transform: translate3d(40px, 0, 0);
     }
 }
-.attack {
-    animation: attack 1s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+
+@keyframes first-move {
+    0% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        transform: translate3d(0px, 300px, 0px);
+    }
 }
+
+@keyframes second-move {
+    0% {
+        transform: translate3d(0px, 300px, 0px);
+    }
+    100% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+/* .attack {
+    animation: attack 1s both;
+} */
 
 .shake {
     animation: shake 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+}
+.second-move {
+    animation: second-move 3s both;
+}
+.first-move {
+    animation: first-move 3s both;
 }
 
 .mob-image {
