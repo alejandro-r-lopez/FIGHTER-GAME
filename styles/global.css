@@ -217,3 +217,33 @@ main {
     width: 100px;
     height: 100px;
 }
+
+.mute-button {
+    background-image: URL('../assets/mute.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin-left: 10px;
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: none;
+}
+
+.mute-button-toggle {
+    background-image: URL('../assets/muteoff.png');
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    opacity: 0.3;
+    margin-left: 10px;
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: none;
+}

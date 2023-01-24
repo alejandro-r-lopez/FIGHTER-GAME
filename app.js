@@ -20,6 +20,9 @@ const mobSpawn = document.getElementById('mob-spawn');
 const defeatCount = document.getElementById('defeat-count');
 
 const newGameButton = document.getElementById('new-game-button');
+const muteButton = document.getElementById('mute-button');
+
+const imperialMarch = new Audio('./assets/Imperial-March.mp3');
 
 let defeated = 0;
 let HP = 2;
@@ -45,6 +48,12 @@ setInterval(makeSecondMove, 6000);
 
 heroImg.classList.add('first-move');
 
+function makeSound() {
+    const explosion = new Audio('./assets/explosion.mp3');
+    explosion.volume = 0.2;
+    explosion.play();
+}
+
 function makeMove() {
     heroImg.classList.remove('first-move');
     heroImg.classList.add('second-move');
@@ -55,12 +64,23 @@ function makeSecondMove() {
     heroImg.classList.remove('second-move');
 }
 
+function playBackgroundMusic() {
+    imperialMarch.volume = 0.1;
+
+    imperialMarch.autoplay = true;
+    imperialMarch.play();
+    setInterval(playBackgroundMusic, 30000);
+}
+
+window.addEventListener('load', () => {
+    playBackgroundMusic();
+});
+
 displayMobs();
 heroHP.textContent = HP;
 defeatCount.textContent = defeated;
 
 heroImg.src = './assets/x-wing.png';
-heroImg.classList.add('attack');
 
 function revertHitMark() {
     heroImg.src = 'assets/x-wing.png';
@@ -92,6 +112,7 @@ function displayMobs() {
             }
             if (mob.hp === 0) {
                 defeated++;
+                makeSound();
             }
             if (HP === 0) {
                 heroImg.src = 'assets/explosion.png';
@@ -130,4 +151,8 @@ mobButton.addEventListener('click', () => {
 newGameButton.addEventListener('click', () => {
     toggleGameOver();
     displayMobs();
+});
+
+muteButton.addEventListener('click', () => {
+    muteButton.classList.toggle('mute-button-toggle');
 });
