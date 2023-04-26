@@ -21,7 +21,6 @@ const defeatCount = document.getElementById('defeat-count');
 
 const newGameButton = document.getElementById('new-game-button');
 const muteButton = document.getElementById('mute-button');
-
 const imperialMarch = new Audio('./assets/Imperial-March.mp3');
 
 let defeated = 0;
@@ -43,8 +42,17 @@ const mobs = [
     },
 ];
 
-setInterval(makeMove, 3000);
-setInterval(makeSecondMove, 6000);
+makeMove();
+
+function playBackgroundMusic() {
+    imperialMarch.volume = 0.3;
+    return imperialMarch.paused ? imperialMarch.play() : imperialMarch.pause();
+}
+
+muteButton.addEventListener('click', () => {
+    muteButton.classList.toggle('mute-button-toggle');
+    playBackgroundMusic();
+});
 
 heroImg.classList.add('first-move');
 
@@ -55,26 +63,8 @@ function makeSound() {
 }
 
 function makeMove() {
-    heroImg.classList.remove('first-move');
-    heroImg.classList.add('second-move');
+    heroImg.classList.toggle('first-move');
 }
-
-function makeSecondMove() {
-    heroImg.classList.add('first-move');
-    heroImg.classList.remove('second-move');
-}
-
-function playBackgroundMusic() {
-    imperialMarch.volume = 0.1;
-
-    imperialMarch.autoplay = true;
-    imperialMarch.play();
-    setInterval(playBackgroundMusic, 30000);
-}
-
-window.addEventListener('load', () => {
-    playBackgroundMusic();
-});
 
 displayMobs();
 heroHP.textContent = HP;
@@ -84,7 +74,6 @@ heroImg.src = './assets/x-wing.png';
 
 function revertHitMark() {
     heroImg.src = 'assets/x-wing.png';
-    heroImg.classList.remove('shake');
 }
 
 function displayMobs() {
@@ -101,11 +90,10 @@ function displayMobs() {
                 alert(`You missed ${mob.name}`);
             }
             if (Math.random() > 0.5) {
-                heroImg.classList.add('shake');
-                alert(`${mob.name} hit you!`);
                 HP--;
-
+                heroImg.classList.add('shake');
                 heroImg.src = './assets/x-wing-hit.png';
+
                 setTimeout(revertHitMark, 600);
             } else {
                 alert(`${mob.name} missed!`);
@@ -151,8 +139,4 @@ mobButton.addEventListener('click', () => {
 newGameButton.addEventListener('click', () => {
     toggleGameOver();
     displayMobs();
-});
-
-muteButton.addEventListener('click', () => {
-    muteButton.classList.toggle('mute-button-toggle');
 });

@@ -23,10 +23,6 @@ export function renderMobs(mobs) {
         mobs.hp = -1;
     }
 
-    // if (mobs.hp === mobs.hp--) {
-    //     mobImg.src = './assets/mob-one-hit.png';
-    // }
-
     function hideDefeated() {
         newMob.classList.add('hide');
     }

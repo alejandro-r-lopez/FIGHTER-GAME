@@ -165,31 +165,23 @@ main {
     0% {
         transform: translate3d(0px, 0px, 0px);
     }
-    100% {
-        transform: translate3d(0px, 300px, 0px);
-    }
-}
 
-@keyframes second-move {
-    0% {
-        transform: translate3d(0px, 300px, 0px);
+    50% {
+        transform: translate3d(0px, 200px, 0px);
     }
     100% {
         transform: translate3d(0px, 0px, 0px);
     }
 }
-/* .attack {
-    animation: attack 1s both;
-} */
 
 .shake {
     animation: shake 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) both;
 }
-.second-move {
-    animation: second-move 3s both;
-}
+
 .first-move {
-    animation: first-move 3s both;
+    animation-name: first-move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
 
 .mob-image {
@@ -219,7 +211,7 @@ main {
 }
 
 .mute-button {
-    background-image: URL('../assets/mute.png');
+    background-image: URL('../assets/music-off.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
@@ -233,12 +225,12 @@ main {
 }
 
 .mute-button-toggle {
-    background-image: URL('../assets/muteoff.png');
+    background-image: URL('../assets/music-on.png');
 
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
-    opacity: 0.3;
+
     margin-left: 10px;
 
     width: 40px;
