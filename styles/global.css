@@ -1,15 +1,14 @@
 :root {
-    --background: rgb(224, 234, 247);
-    --header-background: rgb(254, 251, 245);
     --primary-font: Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
         'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
 }
 
 body {
     font-family: var(--primary-font);
-    background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr;
+    background: url('../assets/space-bg.png');
+    background-size: cover;
 }
 
 header {
@@ -32,4 +31,211 @@ header .logo {
 
 main {
     padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    padding: 20px;
+    color: aliceblue;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.counter-section {
+    position: absolute;
+    left: 40px;
+}
+
+.fight-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-top: 20px;
+}
+
+.hero-img {
+    width: 100px;
+}
+
+.mobs {
+    width: 80px;
+}
+
+.mob-item {
+    text-align: center;
+    color: aliceblue;
+    line-height: 4px;
+    font-size: 10px;
+    padding-bottom: 30px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.mob-style {
+    width: 100px;
+    margin-right: 40px;
+}
+
+.hero-hp {
+    color: aliceblue;
+    font-family: 'Press Start 2P', cursive;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.game-over {
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 300px;
+    font-size: 36px;
+    color: red;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.hide {
+    display: none;
+}
+
+.new-game-button {
+    margin-top: 20px;
+    width: 200px;
+    background: transparent;
+    color: white;
+    outline: none;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+}
+
+.mob-input {
+    border-radius: 2px;
+    background: transparent;
+    outline: none;
+    color: aliceblue;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.mob-button {
+    font-size: 10px;
+    margin-left: 10px;
+    background-color: black;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@keyframes attack {
+    0% {
+        transform: translate3d(-200px, 0, 0);
+    }
+    100% {
+        transform: translate3d(40px, 0, 0);
+    }
+}
+
+@keyframes first-move {
+    0% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+    50% {
+        transform: translate3d(0px, 200px, 0px);
+    }
+    100% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+}
+
+.first-move {
+    animation-name: first-move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.mob-image {
+    background-image: URL('../assets/mob-one.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+
+    width: 100px;
+    height: 100px;
+}
+.mob-hit-image {
+    background-image: URL('../assets/mob-one-hit.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+
+    width: 100px;
+    height: 100px;
+}
+
+.explode {
+    background-image: URL('../assets/explosion.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+
+    width: 100px;
+    height: 100px;
+}
+
+.mute-button {
+    background-image: URL('../assets/music-off.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin-left: 10px;
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: none;
+}
+
+.mute-button-toggle {
+    background-image: URL('../assets/music-on.png');
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+
+    margin-left: 10px;
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: none;
 }
